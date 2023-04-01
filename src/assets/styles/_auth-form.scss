@@ -1,0 +1,68 @@
+@import "variables";
+@import "mixins";
+
+.auth-form {
+  margin-top: 50px;
+  margin-bottom: 110px;
+
+  .auth-title {
+    @include head-lora-36;
+    line-height: 130%;
+    margin-bottom: 40px;
+    color: $light-blue-color;
+  }
+
+  .auth-inputs {
+    margin-bottom: 43px;
+    .input {
+      width: 422px;
+      height: 53px;
+      background: #ffffff;
+      border: 1.5px solid $light-blue-color;
+      border-radius: 3px;
+    }
+    .auth-input {
+      margin-bottom: 5px;
+    }
+    .auth-checkbox {
+      max-width: 422px;
+      display: flex;
+      align-items: baseline;
+
+      input {
+        margin: 0;
+      }
+      label {
+        font-size: 16px;
+        line-height: 130%;
+        margin-left: 10px;
+        color: $login-color-text;
+        a {
+          color: $light-blue-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .auth-button {
+    margin-top: 30px;
+    width: 422px;
+    .login{
+    width: 422px;
+    }
+  }
+
+  .auth-link {
+    margin-top: 8px;
+    font-size: 16px;
+    color: $login-color-text;
+    a {
+      text-decoration: none;
+      margin-left: 5px;
+      color: $light-blue-color;
+    }
+  }
+}
+
+.page-image {
+}

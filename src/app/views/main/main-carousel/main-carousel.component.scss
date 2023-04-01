@@ -1,0 +1,94 @@
+@import "../../../../assets/styles/variables";
+
+.button.ng-star-inserted {
+  position: absolute;
+  width: 163px;
+  height: 51px;
+  bottom: 100px;
+  left: 80px;
+}
+
+.order-modal {
+  box-sizing: border-box;
+  width: 727px;
+  height: 489px;
+  padding: 100px 70px 220px;
+  position: relative;
+  text-align: center;
+  // color: $green-text-color;
+
+  .order-modal-close {
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+  }
+  .modal-body {
+    .modal-title {
+      font-family: "Lora";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 130%;
+      color: #709fdc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input.form-control {
+      width: 422px;
+      height: 53px;
+      background: #ffffff;
+      border: 1.5px solid $light-blue-color;
+      border-radius: 3px;
+      color: $light-blue-color;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+    .after-order-dend-message {
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      /* or 18px */
+
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1e1a2b;
+    }
+  }
+  .modal-footer {
+    .btn {
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 422px;
+      height: 51px;
+      background: $light-blue-color;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #ffffff;
+    }
+    .btn-ok {
+      width: 73px;
+      height: 36px;
+      border: none;
+      color: white;
+      background: #709fdc;
+      border-radius: 5px;
+    }
+  }
+}
+
+.invalid-errors {
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-left: 50px;
+  :last-child {
+    margin-bottom: 0;
+  }
+  .error-text {
+    color: red;
+  }
+}

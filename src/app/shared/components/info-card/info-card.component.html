@@ -1,0 +1,32 @@
+<div class="item" [class.secondHeight]="!getPrice()" *ngIf="item">
+  <div class="item-image" style="background-image: url({{ imageFolderPath }})">
+    <div class="item-category" *ngIf="!!item?.category">
+      {{ item?.category }}
+    </div>
+  </div>
+  <div class="item-title">{{ item?.title }}</div>
+  <div class="item-text">{{ item?.description }}</div>
+  <div class="item-container">
+    <div class="item-container-price" *ngIf="getPrice()">
+      От {{ getPrice() }}
+    </div>
+    <div class="item-container-button">
+      <button
+        class="button main-services"
+        *ngIf="getPrice()"
+        (click)="openVerticallyCentered(popup)"
+      >
+        Подробнее
+      </button>
+      <a
+        class="link main-services"
+        *ngIf="!!item?.url"
+        [routerLink]="['/articles/' + item!.url]"
+        >Читать дальше</a
+      >
+    </div>
+  </div>
+</div>
+<ng-template #popup let-modal><modal [modalTitle]="modalTitle" [item]="item" [isFirstVariant]="isFirstVariant" [modal]="modal"></modal></ng-template>
+
+

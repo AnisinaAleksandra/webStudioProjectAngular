@@ -1,0 +1,86 @@
+<section class="login" [formGroup]="loginForm">
+    <div class="container">
+      <div class="auth-form">
+        <div class="auth-title">Войти в личный кабинет</div>
+  
+        <div class="auth-inputs">
+          <div class="auth-input">
+            <input
+              type="text"
+              class="input"
+              placeholder="Электронная почта"
+              [ngStyle]="{
+                'border-color':
+                  loginForm.get('email')?.invalid &&
+                  (loginForm.get('email')?.dirty ||
+                    loginForm.get('email')?.touched)
+                    ? 'red'
+                    : ''
+              }"
+              formControlName="email"
+            />
+          </div>
+          <div
+          class="invalid-errors"
+          *ngIf="loginForm!.get('email')!.invalid 
+  && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
+  && (loginForm.get('email')?.errors?.['required']|| loginForm.get('email')?.errors?.['pattern'])"
+        >
+          <span
+            class="error-text"
+            *ngIf="loginForm.get('email')?.errors?.['required']"
+            >Необходимо ввести корректный email</span
+          >
+        </div>
+          <div class="auth-input">
+            <input
+              type="password"
+              class="input"
+              placeholder="Пароль"
+              [ngStyle]="{
+                  'border-color':
+                    loginForm.get('password')?.invalid &&
+                    (loginForm.get('password')?.dirty ||
+                      loginForm.get('password')?.touched)
+                      ? 'red'
+                      : ''
+                }"
+              formControlName="password"
+            />
+          </div>
+          <div
+          class="invalid-errors"
+          *ngIf="loginForm!.get('password')!.invalid 
+&& (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)
+&& (loginForm.get('password')?.errors?.['required']|| loginForm.get('password')?.errors?.['pattern'])"
+        >
+          <span
+            class="error-text"
+            *ngIf="loginForm.get('password')?.errors?.['required']|| loginForm.get('password')?.errors?.['pattern']"
+            >Необходимо ввести пароль</span
+          >
+        </div>
+          <div class="auth-checkbox">
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="remember"
+              formControlName="rememberMe"
+            />
+            <label for="remember">Запомнить меня</label>
+          </div>
+        </div>
+        <div class="auth-button">
+          <button class="button login" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
+        </div>
+  
+        <div class="auth-link">
+          Нет аккаунта? <a routerLink="/signup">Зарегистрируйтесь</a>
+        </div>
+      </div>
+      <div class="page-image">
+        <img src="/assets/images/login.png" alt="girlLogin" />
+      </div>
+    </div>
+  </section>
+  

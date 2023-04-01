@@ -1,0 +1,130 @@
+<section class="signup" [formGroup]="signUpForm" passwordRepeat>
+  <div class="container">
+    <div class="auth-form">
+      <div class="auth-title">Регистрация на сайте</div>
+
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input
+            type="text"
+            class="input"
+            placeholder="Ваше имя"
+            [ngStyle]="{
+              'border-color':
+                signUpForm.get('name')?.invalid &&
+                (signUpForm.get('name')?.dirty ||
+                  signUpForm.get('name')?.touched)
+                  ? 'red'
+                  : ''
+            }"
+            formControlName="name"
+          />
+        </div>
+        <div
+          class="invalid-errors"
+          *ngIf="signUpForm!.get('name')!.invalid 
+  && (signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty)
+  && (signUpForm.get('name')?.errors?.['required']|| signUpForm.get('name')?.errors?.['pattern'])"
+        >
+          <span
+            class="error-text"
+            *ngIf="signUpForm.get('name')?.errors?.['required']"
+            >Необходимо ввести имя и фамилию на русском языке</span
+          >
+          <span
+            class="error-text"
+            *ngIf="signUpForm.get('name')?.errors?.['pattern']"
+            >Необходимо ввести имя и фамилию на русском языке с большой
+            буквы</span
+          >
+        </div>
+        <div class="auth-input">
+          <input
+            type="text"
+            class="input"
+            placeholder="Электронная почта"
+            [ngStyle]="{
+              'border-color':
+                signUpForm.get('email')?.invalid &&
+                (signUpForm.get('email')?.dirty ||
+                  signUpForm.get('email')?.touched)
+                  ? 'red'
+                  : ''
+            }"
+            formControlName="email"
+          />
+        </div>
+        <div
+          class="invalid-errors"
+          *ngIf="signUpForm!.get('email')!.invalid 
+  && (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty)
+  && (signUpForm.get('email')?.errors?.['required']|| signUpForm.get('email')?.errors?.['pattern'])"
+        >
+          <span
+            class="error-text"
+            *ngIf="signUpForm.get('email')?.errors?.['required']"
+            >Необходимо ввести корректный email</span
+          >
+        </div>
+        <div class="auth-input">
+          <input
+            type="password"
+            class="input"
+            placeholder="Пароль"
+            [ngStyle]="{
+              'border-color':
+                signUpForm.get('password')?.invalid &&
+                (signUpForm.get('password')?.dirty ||
+                  signUpForm.get('password')?.touched)
+                  ? 'red'
+                  : ''
+            }"
+            formControlName="password"
+          />
+        </div>
+        <div
+          class="invalid-errors"
+          *ngIf="signUpForm!.get('password')!.invalid 
+&& (signUpForm.get('password')?.touched || signUpForm.get('password')?.dirty)
+&& (signUpForm.get('password')?.errors?.['required']|| signUpForm.get('password')?.errors?.['pattern'])"
+        >
+          <span
+            class="error-text"
+            *ngIf="signUpForm.get('password')?.errors?.['required']|| signUpForm.get('password')?.errors?.['pattern']"
+            >Необходимо ввести пароль минимум 8 символов, обязательно одна
+            большая и одна маленькая латиская буква</span
+          >
+        </div>
+        <div class="auth-checkbox">
+          <input
+            type="checkbox"
+            class="checkbox"
+            id="agree"
+            formControlName="agree"
+          />
+          <label for="agree"
+            >Я принимаю <a href="#">условия пользовательского соглашения</a> и
+            даю согласие <a href="#">на обработку персональных данных.</a>
+          </label>
+        </div>
+      </div>
+
+      <div class="auth-button">
+        <button
+          class="button"
+          [disabled]="signUpForm.invalid"
+          (click)="signUp()"
+        >
+          Зарегистрироваться
+        </button>
+      </div>
+
+      <div class="auth-link">
+        Уже есть аккаунт? <a routerLink="/login">Войдите</a>
+      </div>
+    </div>
+    <div class="page-image">
+      <img src="/assets/images/signup.png" alt="flower" />
+    </div>
+  </div>
+</section>

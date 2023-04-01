@@ -1,0 +1,62 @@
+@import "../../../../assets/styles/variables";
+
+.header {
+  padding-top: 41px;
+  padding-bottom: 40px;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .header-menu {
+      display: flex;
+      align-items: center;
+
+      color: $main-color;
+      margin-left: 103px;
+      margin-right: 227px;
+      nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li {
+          margin-right: 30px;
+          list-style: none;
+          a {
+            color: $main-color;
+            cursor: pointer;
+            text-decoration: none;
+            &.active{
+              color: $light-blue-color;
+            }
+          }
+          
+        }
+      }
+    }
+    .header-phone {
+      display: flex;
+      align-items: center;
+      a {
+        color: $light-blue-color;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    .header-actions {
+      display: flex;
+      cursor: pointer;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $main-color;
+      }
+      svg {
+        margin-right: 9px;
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.acticle-details {
+  padding-bottom: 120px;
+  .container {
+    .acticle-details-bread-crumps {
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: $light-blue-color;
+      margin-bottom: 60px;
+      a {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #b9d5fd;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    .acticle-details-first-container {
+      display: flex;
+      justify-content: space-between;
+      .left-side {
+        width: 610px;
+        .acticle-details-title {
+          @include head-lora-38;
+          line-height: 130%;
+          margin-bottom: 40px;
+        }
+        .acticle-details-description {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 130%;
+          color: $light-blue-color;
+        }
+      }
+      .acticle-details-image {
+        width: 527px;
+        height: 320px;
+        border-radius: 5px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    .acticle-details-second-container {
+      display: flex;
+      padding-top: 60px;
+      .acticle-details-text {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $main-color;
+        margin-right: 133px;
+      }
+
+      .acticle-details-blog-list {
+        width: 291;
+        .title {
+          font-family: "Lora";
+          font-weight: 400;
+          font-size: 26px;
+          color: $light-blue-color;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .social-part {
+      padding-top: 61px;
+      padding-bottom: 61px;
+      .social-part-text {
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: $light-blue-color;
+        margin-right: 20px;
+      }
+      svg {
+        margin-right: 13px;
+      }
+    }
+    .comments-part {
+      .comments-part-title {
+        @include head-lora-38;
+        line-height: 130%;
+        margin-bottom: 20px;
+      }
+      .comment-part-login {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $main-color;
+        margin-bottom: 60px;
+        a {
+          color: $light-blue-color;
+        }
+      }
+      .comment-part-text-area {
+        display: flex;
+        flex-direction: column;
+        textarea {
+          width: 818px;
+          height: 248px;
+          left: 100px;
+          top: 2547px;
+          padding-top: 20px;
+          padding-left: 20px;
+          background: #ffffff;
+          border: 1.5px solid $light-blue-color;
+          border-radius: 3px;
+          margin-bottom: 20px;
+          &::placeholder {
+            font-family: "Montserrat";
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            color: #a8aba7;
+          }
+        }
+        .button.send-comment {
+          padding: 15px 40px;
+
+          width: 422px;
+          height: 51px;
+
+          background: #709fdc;
+          border-radius: 5px;
+          font-family: "Montserrat";
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 130%;
+          color: #ffffff;
+          margin-bottom: 20px;
+          &:disabled{
+            background: #8ca5c5;
+
+          }
+        }
+      }
+      .comments-list-container {
+        width: 854px;
+        .comments-item {
+          margin-top: 43px;
+          .comment-top-part {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            .comment-avatar {
+              width: 60px;
+              height: 60px;
+              margin-right: 26px;
+            }
+            .cooment-name-date {
+              .name {
+                font-family: "Montserrat";
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 130%;
+                color: $light-blue-color;
+              }
+              .date-time {
+                font-family: "Montserrat";
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 130%;
+                color: #bebebe;
+              }
+            }
+          }
+          .comment-bottom-part {
+            font-family: "Montserrat";
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: $main-color;
+          }
+
+          .comment-actions {
+            padding-top: 41px;
+            display: flex;
+            align-items: center;
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 140%;
+            color: #071739;
+            .comment-action {
+              cursor: pointer;
+            }
+            .like {
+              margin-right: 17px;
+              display: flex;
+              align-items: center;
+            }
+            .dislike {
+              margin-right: 19px;
+              display: flex;
+              align-items: center;
+            }
+            .count {
+              margin-right: 5px;
+            }
+          }
+        }
+        .link-load-more-comments {
+          margin-top: 61px;
+          #btn-load-more {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: "Montserrat";
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            color: $light-blue-color;
+            svg {
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

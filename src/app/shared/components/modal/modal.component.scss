@@ -1,0 +1,92 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.modal-footer {
+  border: none;
+  .btn {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 422px;
+    height: 51px;
+    background: $light-blue-color;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .btn-ok {
+    width: 73px;
+    height: 36px;
+    background: #709fdc;
+    border-radius: 5px;
+  }
+}
+
+#myModal {
+  box-sizing: border-box;
+
+  position: relative;
+  width: 727px;
+  height: 489px;
+  color: #ffffff;
+  background: #ffffff;
+  border: 1.5px solid #709fdc;
+  border-radius: 10px;
+  .btn-ok {
+    width: 73px;
+    height: 36px;
+    background: #709fdc;
+    border-radius: 5px;
+    border: none;
+    color: white;
+  }
+}
+
+#myModal {
+  .modal-dialog.modal-dialog-centered {
+    .modal-content {
+      border: none;
+
+      .modal-header {
+        border: none;
+        .btn-close {
+          outline: none;
+        }
+      }
+    }
+  }
+  .modal-body {
+    display: block;
+    margin: 0 auto;
+    .modal-title {
+      @include head-lora-38;
+      line-height: 130%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input.form-control {
+      width: 422px;
+      height: 53px;
+      background: #ffffff;
+      border: 1.5px solid $light-blue-color;
+      border-radius: 3px;
+      color: $light-blue-color;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.invalid-errors {
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-left: 50px;
+  :last-child {
+    margin-bottom: 0;
+  }
+  .error-text {
+    color: red;
+  }
+}

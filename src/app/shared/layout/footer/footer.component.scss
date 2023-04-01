@@ -1,0 +1,95 @@
+@import "../../../../assets/styles/variables";
+
+.footer {
+  padding-top: 41px;
+  padding-bottom: 54px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: $background;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    .footer-menu {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      color: $main-color;
+      .logo {
+        margin-right: 103px;
+      }
+      nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li {
+          margin-right: 30px;
+          list-style: none;
+          a {
+            color: $main-color;
+            cursor: pointer;
+            text-decoration: none;
+          }
+          &.active a {
+            color: $light-blue-color;
+          }
+        }
+      }
+    }
+
+    .footer-info {
+      display: flex;
+      margin-bottom: 6px;
+      .footer-info-block {
+        display: flex;
+        flex-direction: column;
+
+        font-family: "Montserrat", sans-serif;
+        margin-right: 60px;
+        .footer-title {
+          font-weight: 500;
+          font-size: 16px;
+          color: $light-blue-color;
+          margin-bottom: 10px;
+        }
+        .footer-text {
+          font-weight: 400;
+          font-size: 14px;
+          color: $main-color;
+        }
+        &:first-child {
+          width: 253px;
+          height: 42px;
+        }
+        &:last-child {
+          .footer-title {
+            margin-bottom: 18px;
+          }
+          a{
+            margin-right: 18px;
+          }
+        }
+        a {
+          font-weight: 400;
+          font-size: 16px;
+          margin-bottom: 10px;
+          color: $main-color;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        &.call-me {
+          width: 153px;
+          height: 36px;
+        }
+      }
+    }
+    .footer-rules {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $light-blue-color;
+    }
+  }
+}

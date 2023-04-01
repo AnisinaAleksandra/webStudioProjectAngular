@@ -1,0 +1,85 @@
+<div class="blog-filters-container">
+  <div class="blog-filters-container-list">
+    <div  *ngFor="let category of activeFilters">
+ <div class="blog-filter" *ngIf="category.isSelect">
+      {{category.name}}
+      <a (click)="removeAllowFilter(category.id)">
+      <svg
+        width="16"
+        height="17"
+        viewBox="0 0 16 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_762_264)">
+          <line
+            x1="1.93553"
+            y1="3.15002"
+            x2="13.9563"
+            y2="15.1708"
+            stroke="#709FDC"
+            stroke-linecap="round"
+          />
+          <line
+            x1="13.9236"
+            y1="3.12984"
+            x2="1.90278"
+            y2="15.1507"
+            stroke="#709FDC"
+            stroke-linecap="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_762_264">
+            <rect
+              width="16"
+              height="16"
+              fill="white"
+              transform="translate(0 0.5)"
+            />
+          </clipPath>
+        </defs>
+      </svg></a>
+    </div>
+    </div>
+   
+  </div>
+  <div class="blog-filters-options">
+    <div
+      class="blog-filters-options-head"
+      [class.open]="open"
+      (click)="toggle()"
+    >
+      Фильтр
+      <svg
+      *ngIf="!open"
+        width="16"
+        height="8"
+        viewBox="0 0 16 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.00002 7.50003C7.41668 7.50003 6.83335 7.27503 6.39168 6.83337L0.95835 1.40003C0.716683 1.15837 0.716683 0.758366 0.95835 0.516699C1.20002 0.275033 1.60002 0.275033 1.84168 0.516699L7.27502 5.95003C7.67502 6.35003 8.32502 6.35003 8.72502 5.95003L14.1583 0.516699C14.4 0.275033 14.8 0.275033 15.0417 0.516699C15.2833 0.758366 15.2833 1.15837 15.0417 1.40003L9.60835 6.83337C9.16668 7.27503 8.58335 7.50003 8.00002 7.50003Z"
+          fill="#071739"
+        />
+      </svg>
+      <svg *ngIf="open"
+      width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.99998 -3.14713e-05C8.58332 -3.14713e-05 9.16665 0.224967 9.60832 0.666634L15.0417 6.09997C15.2833 6.34163 15.2833 6.74163 15.0417 6.9833C14.8 7.22497 14.4 7.22497 14.1583 6.9833L8.72498 1.54997C8.32498 1.14997 7.67498 1.14997 7.27498 1.54997L1.84165 6.9833C1.59999 7.22497 1.19998 7.22497 0.958317 6.9833C0.716651 6.74163 0.716651 6.34163 0.958317 6.09997L6.39165 0.666634C6.83332 0.224967 7.41665 -3.14713e-05 7.99998 -3.14713e-05Z" fill="#071739"/>
+        </svg>
+        
+    </div>
+
+    <div class="blog-filters-options-body" [class.open]="open">
+      <div
+        class="filters-categories"
+        [class.isSelect]="category.isSelect"
+        *ngFor="let category of categories"
+        (click)="updateFilterParam(category.id)"
+      >
+        {{ category.name }} <span>{{ !category.isSelect ? "+" : "-" }}</span>
+      </div>
+    </div>
+  </div>
+</div>

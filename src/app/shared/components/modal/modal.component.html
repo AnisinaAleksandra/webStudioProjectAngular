@@ -1,0 +1,125 @@
+<div
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+          *ngIf="myOrderFormView"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-title">{{ modalTitle }}</div>
+        <form
+          class="row g-3"
+          #form
+          novalidate
+          [formGroup]="orderForm"
+          *ngIf="myOrderFormView"
+        >
+          <input
+            *ngIf="isFirstVariant"
+            type="text"
+            class="form-control"
+            id="inputService"
+            name="service"
+            value="service"
+            formControlName="service"
+          />
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            name="name"
+            placeholder="Ваше имя"
+            formControlName="name"
+          />
+          <div
+            class="invalid-errors"
+            *ngIf="orderForm!.get('name')?.invalid 
+          && (orderForm.get('name')?.touched || orderForm.get('name')?.dirty)
+          && (orderForm.get('name')?.errors?.['required']|| orderForm.get('name')?.errors?.['pattern'])"
+          >
+            <span
+              class="error-text"
+              *ngIf="orderForm.get('name')?.errors?.['required']"
+              >Необходимо ввести имя</span
+            >
+            <span
+              class="error-text"
+              *ngIf="orderForm.get('name')?.errors?.['pattern']"
+              >Можно ввести только буквы</span
+            >
+          </div>
+          <input
+            id="inputPhone"
+            name="phone"
+            formControlName="phone"
+            class="form-control" 
+            placeholder="Ваш номер телефона"
+            [imask]="phoneMask"
+            [unmask]="true"
+            (accept)="onAccept()"
+            (complete)="onComplete()"
+          />
+
+          <div
+            class="invalid-errors"
+            *ngIf="orderForm!.get('phone')!.invalid 
+      && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)
+      && (orderForm.get('phone')?.errors?.['required']|| orderForm.get('phone')?.errors?.['pattern'] || orderForm.get('phone')?.errors?.['minlength'])"
+          >
+            <span
+              class="error-text"
+              *ngIf="orderForm.get('phone')?.errors?.['required']"
+              >Необходимо ввести телефон</span
+            >
+
+            <span
+              class="error-text"
+              *ngIf="orderForm.get('phone')?.errors?.['minlength']"
+              >Колличество цифр должно быть 11</span
+            >
+            <br />
+            <span
+              class="error-text"
+              *ngIf="orderForm.get('phone')?.errors?.['pattern']"
+              >Можно вводить только цифры и '+'</span
+            >
+          </div>
+        </form>
+        <div class="after-order-dend-message" *ngIf="isSending">
+          Мы свяжемся с вами при первой же возможности.
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn"
+          (click)="sendOrder()"
+          *ngIf="!isSending"
+        >
+          {{ titleButton }}
+        </button>
+
+        <button
+          (click)="modal.dismiss('Cross click')"
+          type="button"
+          class="btn-ok"
+          *ngIf="isSending"
+        >
+          Окей
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

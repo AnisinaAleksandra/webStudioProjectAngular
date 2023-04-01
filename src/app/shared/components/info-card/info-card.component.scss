@@ -1,0 +1,86 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.item {
+  width: 291px;
+  height: 500px;
+  margin-bottom: 120px;
+  margin-right: 25px;
+  position: relative;
+  &.secondHeight {
+    height: 560px;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  .item-image {
+    width: 291px;
+    height: 291px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    .item-category {
+      position: absolute;
+      width: 89px;
+      height: 34px;
+      right: 9px;
+      top: 10px;
+
+      background: #ffffff;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 130%;
+      color: $light-blue-color;
+    }
+  }
+  .item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: $light-blue-color;
+    margin-bottom: 10px;
+  }
+  .item-text {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: $main-color;
+  }
+  .item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    .item-container-price {
+      font-family: "Montserrat";
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 130%;
+      color: $light-blue-color;
+      margin-right: 21px;
+    }
+    .item-container-button {
+      margin-top: 20px;
+      .button.main-services {
+        width: 163px;
+        height: 51px;
+      }
+      .link.main-services {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        text-decoration-line: underline;
+
+        color: $light-blue-color;
+      }
+    }
+  }
+}

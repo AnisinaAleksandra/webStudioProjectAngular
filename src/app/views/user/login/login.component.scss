@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/auth-form";
+
+.login .container {
+  display: flex;
+  padding-top: 136px;
+  .page-image {
+    margin-left: 185px;
+    img {
+      vertical-align: bottom;
+    }
+  }
+}
+.invalid-errors {
+  color: red;
+}

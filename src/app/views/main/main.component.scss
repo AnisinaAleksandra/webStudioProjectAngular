@@ -1,0 +1,236 @@
+@import "../../../assets/styles/fonts";
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.main {
+  .container {
+    .main-carousel {
+      padding-bottom: 120px
+    }
+    .main-services {
+      .main-services-title {
+        @include head-lora-38;
+        line-height: 130%;
+        color: $light-blue-color;
+        margin-bottom: 40px;
+      }
+      .main-services-list {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .main-about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 120px;
+      .image-container {
+        width: 460px;
+        height: 453px;
+        border-radius: 5px;
+      }
+      .main-about-container {
+        width: 650px;
+        .main-about-title {
+          @include head-lora-38;
+          line-height: 130%;
+          margin-bottom: 20px;
+        }
+        .main-about-description {
+          width: 633px;
+          height: 90px;
+
+          font-family: "Montserrat";
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 130%;
+          color: $login-color-text;
+          margin-bottom: 40px;
+        }
+        .main-about-advantages {
+          .main-about-advantages-title {
+            font-family: "Lora";
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 130%;
+            color: $light-blue-color;
+            margin-bottom: 20px;
+          }
+          .main-about-advantages-list {
+            display: flex;
+            flex-wrap: wrap;
+            .main-about-advantages-list-item {
+              width: 316px;
+              height: 90px;
+              display: flex;
+              align-items: center;
+              .main-about-advantages-number {
+                background-color: $background;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 20px;
+                span {
+                  position: absolute;
+                  width: 19px;
+                  height: 65px;
+                  left: 8px;
+                  top: -20px;
+
+                  font-family: "Lora";
+                  font-weight: 500;
+                  font-size: 50px;
+                  line-height: 130%;
+                  color: $light-blue-color;
+                }
+              }
+              .main-about-advantage-text {
+                max-width: 256px;
+                height: 90px;
+                font-family: "Montserrat";
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 130%;
+                color: $login-color-text;
+                .main-about-advantage-text-bold {
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .main-popular-articles {
+      position: relative;
+      .main-popular-articles-title {
+        @include head-lora-38;
+        line-height: 130%;
+        margin-bottom: 40px;
+      }
+      .main-popular-articles-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .main-popular-articles-link {
+        position: absolute;
+        right: 0;
+        a {
+          font-family: "Montserrat";
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $light-blue-color;
+          text-decoration: none;
+          margin-right: 18px;
+        }
+      }
+    }
+
+    .reviews {
+      margin-top: 120px;
+      margin-bottom: 120px;
+      .container {
+        .reviews-title {
+          @include head-lora-38;
+          margin-bottom: 20px;
+          line-height: 130%;
+        }
+        .reviews-carousel {
+          position: relative;
+          .review-item {
+            height: 267px;
+            width: 396px;
+            border-radius: 5px;
+            padding: 30px;
+            border: 2px solid $light-blue-color;
+            box-sizing: border-box;
+            .review-item-head {
+              display: flex;
+              align-items: center;
+              .review-item-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-position: center;
+                background-size: cover;
+                margin-right: 26px;
+              }
+              .review-item-name {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                color: $light-blue-color;
+              }
+            }
+            .review-item-text {
+              margin-top: 15px;
+              font-family: "Montserrat";
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 140%;
+              color: $main-color;
+            }
+          }
+
+          .reviews-arrows {
+            display: flex;
+            a {
+              top: calc(50% - 5px);
+              display: flex;
+              position: absolute;
+              cursor: pointer;
+              &.move-backward {
+                left: -41px;
+              }
+              &.move-forward {
+                right: -41px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main-contacts {
+      display: flex;
+      padding-bottom: 120px;
+      .main-contacts-info {
+        margin-left: 20px;
+        .main-contacts-info-title {
+          @include head-lora-38;
+          line-height: 130%;
+          color: $light-blue-color;
+          margin-bottom: 20px;
+        }
+        .info-contacts {
+          margin-bottom: 20px;
+          .info-contacts-title {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            color: $light-blue-color;
+            margin-bottom: 10px;
+          }
+          .info-contacts-text {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            color: $main-color;
+          }
+          .info-contacts-icons{
+            svg{
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
