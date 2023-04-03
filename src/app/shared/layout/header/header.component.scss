@@ -10,13 +10,14 @@
   .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     .header-menu {
       display: flex;
       align-items: center;
 
       color: $main-color;
       margin-left: 103px;
-      margin-right: 227px;
+      margin-right: 217px;
       nav ul {
         display: flex;
         margin: 0;
@@ -28,17 +29,18 @@
             color: $main-color;
             cursor: pointer;
             text-decoration: none;
-            &.active{
+            &.active {
               color: $light-blue-color;
             }
           }
-          
         }
       }
     }
     .header-phone {
       display: flex;
       align-items: center;
+      margin-right: 10px;
+
       a {
         color: $light-blue-color;
         text-decoration: none;
@@ -56,6 +58,44 @@
       }
       svg {
         margin-right: 9px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    .container {
+      max-width: 97%;
+      .header-menu {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .header {
+    .container {
+      .header-menu {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .header {
+    .container {
+      .header-phone {
+        display: none;
+      }
+      .header-actions {
+        margin-top: 44px;
+        position: absolute;
+        right: 0px;
       }
     }
   }

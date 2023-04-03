@@ -8,7 +8,7 @@ body {
   font-weight: 400;
 }
 
-.container {
+.my-container {
   max-width: $container-width;
   margin: 0 auto;
 }
@@ -50,7 +50,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: #ffffff;
- 
+
   &.button-icon {
     display: flex;
     align-items: center;
@@ -119,8 +119,8 @@ a.button {
   }
 }
 
-
-h3, h1 {
+h3,
+h1 {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 20px;
@@ -129,8 +129,40 @@ h3, h1 {
 }
 
 .carousel-control-prev {
-  left: -60px !important;
+  padding-left: 20px!important;
+  justify-content: flex-start !important;
 }
 .carousel-control-next {
-  right: -60px !important;
+  position: absolute !important;
+  right: 50px !important;
+  padding-right: 20px !important;
+  justify-content: flex-end !important;
+}
+
+.ng-star-inserted {
+  // max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .my-container {
+    max-width: 100%;
+  }
+}
+
+/* Маленькие устройства (портретные планшеты и большие телефоны, 600px и выше) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Средние устройства (альбомные планшеты, 768px и выше) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Большие устройства (ноутбуки / настольные компьютеры, 992px и выше) */
+@media only screen and (min-width: 992px) {
+  .my-container{
+    max-width: 939px;
+}}
+
+/* Очень большие устройства (большие ноутбуки и настольные компьютеры, 1200px и выше) */
+@media only screen and (min-width: 1200px) {
 }

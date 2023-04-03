@@ -3,9 +3,9 @@
 @import "../../../assets/styles/mixins";
 
 .main {
-  .container {
+  .my-container {
     .main-carousel {
-      padding-bottom: 120px
+      padding-bottom: 120px;
     }
     .main-services {
       .main-services-title {
@@ -16,7 +16,8 @@
       }
       .main-services-list {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
     }
 
@@ -31,14 +32,14 @@
         border-radius: 5px;
       }
       .main-about-container {
-        width: 650px;
+        max-width: 650px;
         .main-about-title {
           @include head-lora-38;
           line-height: 130%;
           margin-bottom: 20px;
         }
         .main-about-description {
-          width: 633px;
+          max-width: 633px;
           height: 90px;
 
           font-family: "Montserrat";
@@ -65,6 +66,7 @@
               height: 90px;
               display: flex;
               align-items: center;
+              margin-bottom: 12px;
               .main-about-advantages-number {
                 background-color: $background;
                 width: 40px;
@@ -224,8 +226,8 @@
             line-height: 130%;
             color: $main-color;
           }
-          .info-contacts-icons{
-            svg{
+          .info-contacts-icons {
+            svg {
               margin-right: 20px;
             }
           }
@@ -234,3 +236,140 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .main {
+    margin-bottom: 20px;
+    .my-container {
+      .main-about {
+        position: relative;
+        margin-bottom: 300px;
+        .main-about-container {
+          max-width: 430px;
+          .main-about-title {
+            @include head-lora-38;
+            line-height: 130%;
+            margin-bottom: 20px;
+          }
+
+          .main-about-advantages {
+            position: absolute;
+            top: 480px;
+            left: 20px;
+
+            .main-about-advantages-list {
+              .main-about-advantages-list-item {
+                max-width: 316px;
+                height: 90px;
+                margin-bottom: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .main {
+    .my-container {
+      max-width: 930px;
+    }
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .main {
+    .my-container {
+      max-width: 930px;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .main {
+    .my-container {
+      max-width: 900px;
+      .main-contacts {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .main {
+    .my-container {
+      max-width: 780px;
+      .main-about {
+        flex-direction: column;
+        .main-about-container {
+          max-width: 100%;
+          .main-about-advantages {
+            top: 626px;
+            left: 74px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .main {
+    .my-container {
+      max-width: 660px;
+      .main-about {
+        flex-direction: column;
+        .main-about-container {
+          max-width: 100%;
+          .main-about-advantages {
+            left: 26px;
+          }
+        }
+      }
+      .main-contacts{
+        .main-contacts-map{
+          iframe{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// flex-direction: column-reverse;
+// @media screen and (max-width: 1200px) {
+//   .main {
+//     margin-bottom: 20px;
+//     .my-container {
+//       .main-about {
+//         position: relative;
+//         margin-bottom: 300px;
+//         .main-about-container {
+//           max-width: 430px;
+//           .main-about-title {
+//             @include head-lora-38;
+//             line-height: 130%;
+//             margin-bottom: 20px;
+//           }
+
+//           .main-about-advantages {
+//             position: absolute;
+//             top: 480px;
+//             left: 20px;
+
+//             .main-about-advantages-list {
+//               .main-about-advantages-list-item {
+//                 max-width: 316px;
+//                 height: 90px;
+//                 margin-bottom: 12px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

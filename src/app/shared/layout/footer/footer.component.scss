@@ -66,7 +66,7 @@
           .footer-title {
             margin-bottom: 18px;
           }
-          a{
+          a {
             margin-right: 18px;
           }
         }
@@ -90,6 +90,36 @@
       font-size: 16px;
       line-height: 130%;
       color: $light-blue-color;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .footer {
+    .container {
+      .footer-menu {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .footer-info {
+        flex-direction: column;
+        .footer-info-block {
+          flex-direction: row;
+          width: 100%;
+          &:first-child {
+            width: 100%;
+          }
+          .footer-text {
+            margin-left: 12px;
+          }
+          a {
+            margin-left: 12px;
+          }
+          .button.call-me {
+            margin-left: 12px;
+          }
+        }
+      }
     }
   }
 }
